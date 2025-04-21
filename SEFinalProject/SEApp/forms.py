@@ -10,6 +10,13 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Remove default help texts
+        self.fields['username'].help_text = 'Type your username.'
+        self.fields['email'].help_text = 'Type your email.'
+        self.fields['password1'].help_text = 'Make sure your password is strong.'
+        self.fields['password2'].help_text = 'Confirm your password.'
 
 class TaskForm(forms.ModelForm):
     class Meta:
