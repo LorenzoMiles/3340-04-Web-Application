@@ -106,8 +106,6 @@ def delete_task(request, task_id):
     
     return render(request, 'SEApp/delete_task.html', {'task': task})
 
-# Add this new function
-
 def redirect_to_login(request):
     # If user is already authenticated, redirect to home
     if request.user.is_authenticated:
@@ -115,7 +113,6 @@ def redirect_to_login(request):
     # Otherwise redirect to login
     return redirect('login')
 
-# Add this function to your views.py
 def logout_view(request):
     logout(request)
     messages.success(request, "You have been successfully logged out.")
