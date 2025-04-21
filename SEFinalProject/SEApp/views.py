@@ -2,13 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from .models import Task, UserProfile
 from .forms import TaskForm, UserRegisterForm, TaskStatusForm
-from django.shortcuts import redirect
-from django.shortcuts import redirect
-from django.contrib.auth import logout
-from django.contrib import messages
 
 
 def index(response, id):
